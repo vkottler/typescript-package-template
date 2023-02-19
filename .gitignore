@@ -1,0 +1,8 @@
+.*_cache
+build
+venv*
+package-name
+.*.env
+datazen-out
+tags
+__pycache__
