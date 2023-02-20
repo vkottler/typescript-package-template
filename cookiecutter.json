@@ -1,4 +1,6 @@
 {
+  "name": "Vaughn Kottler",
   "project_name": "package-name",
+  "description": "Short project description.",
   "has_funding": [true, false]
 }

@@ -1,0 +1,12 @@
+---
+title: {{cookiecutter.project_name}}
+author: {{cookiecutter.name}}
+description: {{cookiecutter.description}}
+
+icon: favicon.ico
+
+keywords: []
+
+style: ""
+body:
+  style: ""

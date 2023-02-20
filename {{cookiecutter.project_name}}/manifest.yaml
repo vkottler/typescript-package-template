@@ -1,0 +1,45 @@
+---
+default_target: groups-all
+
+includes:
+  - config/includes/license.yaml
+{%- if cookiecutter.has_funding|lower == "true" %}
+  - config/includes/funding.yaml
+{%- endif %}
+
+templates:
+  - local/templates
+  - config/templates
+
+compiles:
+  - name: local
+    configs:
+      - local/configs
+      - config/configs
+    variables:
+      - local/variables
+      - config/variables
+
+renders:
+  - name: app.html
+    as: html_content
+    indent: 4
+    no_file: true
+    dependencies:
+      - local
+
+  - name: index.html
+    output_dir: src
+    key: basic.html
+    dependencies:
+      - local
+      - renders-app.html
+
+groups:
+  - name: all
+    dependencies:
+      - renders-index.html
+      - groups-license
+{%- if cookiecutter.has_funding|lower == "true" %}
+      - groups-funding
+{%- endif %}

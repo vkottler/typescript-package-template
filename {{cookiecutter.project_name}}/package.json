@@ -1,0 +1,9 @@
+{
+  "name": "{{cookiecutter.project_name}}",
+  "source": "src/index.html",
+  "alias": {
+    "react": "preact/compat",
+    "react/jsx-runtime": "preact/jsx-runtime",
+    "preact/jsx-dev-runtime": "preact/compat/jsx-dev-runtime"
+  }
+}

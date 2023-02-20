@@ -1,0 +1,12 @@
+.*_cache
+build
+venv*
+.*.env
+deps
+dist
+.*-cache
+*-out
+tags
+node_modules
+coverage
+{{cookiecutter.project_name}}
