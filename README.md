@@ -2,7 +2,7 @@
     =====================================
     generator=datazen
     version=3.1.0
-    hash=ce08dca2813c60d52cc066c7ff68fcce
+    hash=c732f2d4e28cff6f72ab3469f5c9441c
     =====================================
 -->
 
@@ -57,11 +57,14 @@ package-name
 │   ├── requirements.txt
 │   └── ts
 │       └── App.ts
+├── tasks
+│   ├── conf.py
+│   └── __init__.py
 ├── tests
 │   └── App.test.ts
 ├── tsconfig.json
 └── .vimrc
 
-8 directories, 22 files
+9 directories, 24 files
 
 ```
