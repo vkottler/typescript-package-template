@@ -15,6 +15,7 @@ def cmd(*args: str, check: bool = True) -> None:
     arg_list = [*args]
     if is_windows() and not arg_list[0].endswith(".exe"):
         arg_list[0] += ".exe"
+    print(arg_list)
     subprocess.run(arg_list, check=check)
 
 
