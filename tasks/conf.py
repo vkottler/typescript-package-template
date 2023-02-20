@@ -47,6 +47,11 @@ def register(
 ) -> bool:
     """Register project tasks to the manager."""
 
+    # Ensure that the 'hooks' directory is seen by cookiecutter.
+    hooks = cwd.joinpath("hooks")
+    if not hooks.exists():
+        hooks.symlink_to(project, target_is_directory=True)
+
     # Don't run yamllint on Windows because it will fail on newlines.
     manager.register(
         Phony("yaml"),
