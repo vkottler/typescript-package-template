@@ -12,8 +12,30 @@ compiles:
     configs:
       - local/configs
 
+templates:
+  - local/templates
+
+commands:
+  - name: "tree"
+    command: "tree"
+    force: true
+    arguments:
+      - "-a"
+      - "-I"
+      - "venv*|__pycache__|*cov*|*-out|config|build|tags|.git*|.*cache*|node_modules"
+      - "--"
+      - "package-name"
+
+renders:
+  - name: README.md
+    output_dir: "."
+    dependencies:
+      - commands-tree
+      - compiles-local
+
 groups:
   - name: all
     dependencies:
       - groups-license
       - groups-funding
+      - renders-README.md
