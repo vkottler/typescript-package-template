@@ -30,6 +30,10 @@ jobs:
         with:
           python-version: 3.9
 
+      - name: install-mk
+        run: |
+          pip3.9 install vmklib
+
       - name: test
         run: |
           mk test yaml
