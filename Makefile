@@ -10,19 +10,16 @@ endif
 
 .PHONY: edit generate test clean-output clean yaml
 
-$($(PROJ)_DIR)/hooks:
-	ln -s $($(PROJ)_DIR)/$(PROJ) $@
+edit: $(PY_PREFIX)edit
 
-edit: $($(PROJ)_DIR)/hooks $(PY_PREFIX)edit
-
-generate: | $(VENV_CONC) $($(PROJ)_DIR)/hooks
+generate: | $(VENV_CONC)
 	$(PYTHON_BIN)/cookiecutter \
 		-o $($(PROJ)_DIR)/.. \
 		$($(PROJ)_DIR)
 
 COMMON_ARGS := -o $($(PROJ)_DIR) $($(PROJ)_DIR)
 
-test: clean-output | $(VENV_CONC) $($(PROJ)_DIR)/hooks
+test: clean-output | $(VENV_CONC)
 	$(PYTHON_BIN)/cookiecutter \
 		--no-input \
 		$(COMMON_ARGS)

@@ -24,3 +24,11 @@ $ {{" ".join(tree["args"])}}
 
 {{tree["stdout"]}}
 ```
+
+## Platform Support
+
+This template is tested on the following platforms:
+
+{% for system in ci["systems"] %}
+* `{{system}}`
+{% endfor %}
