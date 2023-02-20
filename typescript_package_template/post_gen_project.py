@@ -6,10 +6,16 @@ post_gen_project - Perform some actions that are not templated.
 from pathlib import Path
 import subprocess
 
+# third-party
+from vcorelib.task.subprocess.run import is_windows
+
 
 def cmd(*args: str, check: bool = True) -> None:
     """Run a shell command."""
-    subprocess.run([*args], check=check)
+    arg_list = [*args]
+    if is_windows() and not arg_list[0].endswith(".exe"):
+        arg_list[0] += ".exe"
+    subprocess.run(arg_list, check=check)
 
 
 def git_cmd(*args: str, check: bool = True) -> None:

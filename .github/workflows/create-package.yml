@@ -27,7 +27,7 @@ jobs:
         with:
           submodules: recursive
 
-      - name: nodev${{matrix.node_version}} setup
+      - name: node${{matrix.node_version}} setup
         uses: actions/setup-node@v3
         with:
           node-version: ${{matrix.node_version}}
