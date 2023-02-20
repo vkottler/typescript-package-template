@@ -14,8 +14,8 @@ jobs:
       matrix:
         system:
           - windows-latest
-          # - macos-latest
-          # - ubuntu-latest
+          - macos-latest
+          - ubuntu-latest
         node_version:
           - 18
 
@@ -31,10 +31,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{matrix.node_version}}
-
-      - name: node
-        run: |
-          npm --version
 
       - name: python3.9 setup
         uses: actions/setup-python@v2

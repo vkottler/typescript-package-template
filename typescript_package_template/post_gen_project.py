@@ -7,15 +7,14 @@ from pathlib import Path
 import subprocess
 
 # third-party
-from vcorelib.task.subprocess.run import is_windows
+from vcorelib.task.subprocess.run import reconcile_platform
 
 
-def cmd(*args: str, check: bool = True) -> None:
+def cmd(program: str, *args: str, check: bool = True) -> None:
     """Run a shell command."""
-    arg_list = [*args]
-    if is_windows() and not arg_list[0].endswith(".exe"):
-        arg_list[0] += ".exe"
-    print(arg_list)
+
+    program, arg_list = reconcile_platform(program, [*args])
+    arg_list.insert(0, program)
     subprocess.run(arg_list, check=check)
 
 
