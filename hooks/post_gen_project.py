@@ -86,8 +86,7 @@ for package in PACKAGES:
     npm_cmd("install", "--save-dev", package)
 
 # Run formatting and linting.
-mk_cmd("format")
-mk_cmd("lint", "yaml")
-mk_cmd("test")
+mk_cmd("node-format")
+mk_cmd("node-lint", "node-test", "yaml")
 
 commit()
