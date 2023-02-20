@@ -1,0 +1,35 @@
+---
+name: Build Template
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ${{matrix.system}}
+    strategy:
+      matrix:
+        system:
+          - macos-latest
+          - windows-latest
+          - ubuntu-latest
+
+    env:
+      PYTHON_VERSION: 3.9
+
+    steps:
+      - uses: actions/checkout@master
+        with:
+          submodules: recursive
+
+      - name: python3.9 setup
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: test
+        run: |
+          mk test yaml
