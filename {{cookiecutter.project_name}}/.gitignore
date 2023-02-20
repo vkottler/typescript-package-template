@@ -10,3 +10,4 @@ tags
 node_modules
 coverage
 {{cookiecutter.project_name}}
+__pycache__
