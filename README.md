@@ -2,7 +2,7 @@
     =====================================
     generator=datazen
     version=3.1.0
-    hash=c732f2d4e28cff6f72ab3469f5c9441c
+    hash=cb5aad3c77ebb12a9e631dbd158c0236
     =====================================
 -->
 
@@ -68,3 +68,11 @@ package-name
 9 directories, 24 files
 
 ```
+
+## Platform Support
+
+This template is tested on the following platforms:
+
+* `windows-latest`
+* `macos-latest`
+* `ubuntu-latest`
