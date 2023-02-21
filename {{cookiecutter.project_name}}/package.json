@@ -1,6 +1,6 @@
 {
   "name": "{{cookiecutter.project_name}}",
-  "source": "src/index.html",
+  "source": "src/index.ts",
   "alias": {
     "react": "preact/compat",
     "react/jsx-runtime": "preact/jsx-runtime",
