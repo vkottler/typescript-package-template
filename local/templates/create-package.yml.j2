@@ -16,7 +16,7 @@ jobs:
         {% for system in ci.systems %}
           - {{system}}
         {% endfor %}
-        node_version:
+        node-version:
         {% for version in ci.node_versions %}
           - {{version}}
         {% endfor %}
@@ -29,10 +29,10 @@ jobs:
         with:
           submodules: recursive
 
-      - name: node{{"${{matrix.node_version}}"}} setup
+      - name: node{{"${{matrix.node-version}}"}} setup
         uses: actions/setup-node@v3
         with:
-          node-version: {{"${{matrix.node_version}}"}}
+          node-version: {{"${{matrix.node-version}}"}}
 
       - name: python{{ci.python_version}} setup
         uses: actions/setup-python@v2
