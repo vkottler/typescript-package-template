@@ -1,0 +1,4 @@
+---
+python_version: 3.11
+author_info:
+  username: {{cookiecutter.username}}

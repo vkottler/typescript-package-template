@@ -16,30 +16,30 @@ jobs:
           - windows-latest
           - macos-latest
           - ubuntu-latest
-        node_version:
+        node-version:
           - 18
 
     env:
-      PYTHON_VERSION: 3.9
+      PYTHON_VERSION: 3.11
 
     steps:
       - uses: actions/checkout@master
         with:
           submodules: recursive
 
-      - name: node${{matrix.node_version}} setup
+      - name: node${{matrix.node-version}} setup
         uses: actions/setup-node@v3
         with:
-          node-version: ${{matrix.node_version}}
+          node-version: ${{matrix.node-version}}
 
-      - name: python3.9 setup
+      - name: python3.11 setup
         uses: actions/setup-python@v2
         with:
-          python-version: 3.9
+          python-version: 3.11
 
       - name: install-mk
         run: |
-          pip3.9 install vmklib
+          pip3.11 install vmklib
 
       - name: test
         run: |

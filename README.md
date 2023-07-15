@@ -1,8 +1,8 @@
 <!--
     =====================================
     generator=datazen
-    version=3.1.0
-    hash=cb5aad3c77ebb12a9e631dbd158c0236
+    version=3.1.2
+    hash=021cd3c6c8f6beb0204893e5fb75ac15
     =====================================
 -->
 
@@ -37,9 +37,12 @@ package-name
 ├── local
 │   ├── configs
 │   │   ├── html.yaml
-│   │   └── license.yaml
+│   │   ├── license.yaml
+│   │   ├── node.yaml
+│   │   └── package.yaml
 │   ├── templates
-│   │   └── app.html.j2
+│   │   ├── app.html.j2
+│   │   └── README.md.j2
 │   └── variables
 │       └── html.yaml
 ├── Makefile
@@ -65,7 +68,7 @@ package-name
 ├── tsconfig.json
 └── .vimrc
 
-9 directories, 24 files
+9 directories, 27 files
 
 ```
 
