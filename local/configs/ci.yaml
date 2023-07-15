@@ -3,6 +3,6 @@ systems:
   - windows-latest
   - macos-latest
   - ubuntu-latest
-node_versions:
-  - 18
-python_version: 3.9
+
+node_versions: [18]
+python_version: 3.11
